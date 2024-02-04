@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starmap Result</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: url('https://unsplash.com/photos/Y61qTmRLcho/download') fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .starmap-container {
+      text-align: center;
+      max-width: 80%;
+      margin: auto;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="starmap-container">
+    <h1>Starmap for <span id="city"></span> on <span id="date"></span></h1>
+    <img id="starmap-img" src="" alt="Starmap Image">
+  </div>
+
+  <!-- Add a script to extract the data from the URL -->
+  <script>
+    window.onload = function () {
+      // Extract the data from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const city = urlParams.get('city');
+      const date = urlParams.get('date');
+
+      // Display the data on the page
+      document.getElementById('city').innerText = city;
+      document.getElementById('date').innerText = date;
+      document.getElementById('starmap-img').src = 'https://www.gutenberg.org/files/23300/23300-h/images/map_I.png';
+    };
+  </script>
+</body>
+
+</html>
